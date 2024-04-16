@@ -1,3 +1,7 @@
+###PCM window should be in the positive coords####
+
+
+
 import pyautogui as pya
 import openpyxl as xl
 import time
