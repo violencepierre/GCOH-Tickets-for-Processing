@@ -5,13 +5,13 @@ import pandas as pd
 from pathlib import Path
 import numpy as np
 
-filepath=Path('out.csv')
+filepath=Path('Inputs/out.csv')
 
-df=pd.read_excel('PCB pull.xlsx',sheet_name='PCB pull')
+df=pd.read_excel('Inputs/PCB pull.xlsx',sheet_name='PCB pull')
 out=pd.DataFrame(columns=['Characteristic Name[CHANM]','Characteristic Value[CHAVL]','Target Hierarchy Name[TGT_HRY_HIENM]','Target Hierarchy Node Name[TGT_HRY_NODENAME]','Target Hierarchy Node Object Name[TGT_HRY_NODEOBJNM]','Mappable'])
 unmappable=pd.DataFrame(columns=['Obj','Target'])
 
-wb=xl.load_workbook('PyDump.xlsx')
+wb=xl.load_workbook('Inputs/PyDump.xlsx')
 
 ws=wb["Dump"]
 mx=ws.max_row+1
