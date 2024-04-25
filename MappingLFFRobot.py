@@ -44,8 +44,13 @@ def init(child,parent):
             print('waiting waiting waiting.....')
 
     pya.moveTo(search)
+    time.sleep(.7)
     pya.doubleClick(search)
     pya.doubleClick(search)
+    pya.press('delete')
+
+    time.sleep(0.7)
+###pya.doubleClick(search)
     pya.typewrite(child)
 
     time.sleep(0.5)
@@ -114,9 +119,12 @@ def init(child,parent):
     pya.moveTo(search)
     pya.doubleClick(search)
     pya.doubleClick(search)
-    time.sleep(0.5)
+    time.sleep(0.7)
+    pya.press('delete')
+    pya.press('delete')
+    time.sleep(0.7)
     pya.typewrite(parent)
-    time.sleep(0.5)
+    time.sleep(0.7)
     pya.click(findall)
 
 
