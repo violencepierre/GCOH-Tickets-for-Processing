@@ -2,7 +2,7 @@ import pandas as pd
 import networkx as satan
 
 print("running")
-df = pd.read_excel('pandas.xlsx')
+df = pd.read_excel('Inputs\pandas.xlsx')
 
 
 G = satan.from_pandas_edgelist(df, 'Parent', 'Node', create_using=satan.DiGraph)
@@ -20,7 +20,7 @@ for node in satan.nodes_with_selfloops(G):
 
 output = pd.DataFrame(sorted(all_paths)).add_prefix('level').fillna(' ')
 
-output.to_excel('pandas.xlsx',sheet_name='Output')
+output.to_excel('Inputs\pandas.xlsx',sheet_name='Output')
 
 #use 0a[Blank] this will solve ur problems
 print("its joeber")
