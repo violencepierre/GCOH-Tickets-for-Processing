@@ -1,7 +1,7 @@
 ###PCM window should be in the positive coords####
 
 
-
+import os
 import pyautogui as pya
 import openpyxl as xl
 import time
@@ -48,7 +48,8 @@ def init(child,parent):
     pya.doubleClick(search)
     pya.doubleClick(search)
     pya.doubleClick(search)
-    pya.press('delete')
+    pya.hotkey("ctrl","a")
+    pya.hotkey("ctrl","a")
 
     time.sleep(0.7)
 ###pya.doubleClick(search)
@@ -125,6 +126,8 @@ def init(child,parent):
     time.sleep(0.7)
     pya.press('delete')
     pya.press('delete')
+    pya.hotkey("ctrl","a")
+    pya.hotkey("ctrl","a")
     time.sleep(0.7)
     pya.typewrite(parent)
     time.sleep(0.7)
@@ -187,12 +190,16 @@ def mainloop():
 
         child=ws['A' + str(i)].value
         parent=ws['B' + str(i)].value
+        os.system("cls")
+        print('Working on row:' + str(i))
         print(child + " goes to " + parent)
         i=i+1
-        print(i)
+        print('Currently remaining objects: ' + str(lrow - 1 - (i-2)) + ' (aside from currently being processed)') 
+        
 
         init(child,parent)
 
+    print("Task completed successfully")
 
 
 
