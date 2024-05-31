@@ -180,7 +180,7 @@ def init(child,parent):
 
 def mainloop():
 
-    wb=xl.load_workbook(filename=r'GCOH resources/GCOHPost.xlsx')
+    wb=xl.load_workbook(filename=r'GCOH Resources/GCOHPost.xlsx')
     ws=wb["MDGF"]
     lrow=len(ws['A'])
     i=2
