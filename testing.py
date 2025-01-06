@@ -1,6 +1,3 @@
-import pyautogui as pyg 
+from test import testing as t
 
-pyg.hotkey("alt","tab")
-pyg.hotkey("ctrl","a")
-pyg.hotkey("ctrl","a")
-pyg.write("pierre")
+testing()
