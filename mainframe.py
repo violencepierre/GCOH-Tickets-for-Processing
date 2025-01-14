@@ -19,7 +19,7 @@ while x != 0:
 
     if ans==4:
         system("cls")
-        print("thank u for using my pr0gram good bye")
+        print("thank u for using my pr0gram now fck off dummy")
         sleep(2)    
         system("cls")
         x=0
