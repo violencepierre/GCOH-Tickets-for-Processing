@@ -6,6 +6,8 @@ import pyautogui as pya
 import openpyxl as xl
 import time
 import threading
+import pyperclip
+import keyboard
 
 
 global child
@@ -21,6 +23,9 @@ def init(child,parent):
     global cut
     global paste
 
+    pyperclip.copy(child)
+    pyperclip.waitForPaste()
+    
     #look for the findall, edit, searchfield, and the find button
     print('Analyzing screen...')
     region=(0, 0, 1920, 1080)
@@ -53,7 +58,10 @@ def init(child,parent):
 
     time.sleep(0.7)
 ###pya.doubleClick(search)
-    pya.typewrite(child)
+    ##pya.typewrite(child,interval=0.20)
+    keyboard.send('ctrl+v')
+    
+
 
     time.sleep(0.5)
 
@@ -118,6 +126,9 @@ def init(child,parent):
         except Exception as e:
             print('waiting waiting waiting.....')
 
+    pyperclip.copy(parent)
+    pyperclip.waitForPaste()
+
     pya.moveTo(search)
     time.sleep(0.7)
     pya.doubleClick(search)
@@ -129,7 +140,8 @@ def init(child,parent):
     pya.hotkey("ctrl","a")
     pya.hotkey("ctrl","a")
     time.sleep(0.7)
-    pya.typewrite(parent)
+    ###pya.typewrite(parent,interval=0.20)
+    keyboard.send('ctrl+v')
     time.sleep(0.7)
     pya.click(findall)
 
