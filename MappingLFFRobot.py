@@ -61,7 +61,7 @@ def init(child,parent):
     ##pya.typewrite(child,interval=0.20)
     keyboard.send('ctrl+v')
     
-
+##asdfasfasdfasdwf
 
     time.sleep(0.5)
 
