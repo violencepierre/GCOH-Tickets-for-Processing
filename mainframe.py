@@ -26,31 +26,13 @@ while x != 0:
 
     elif ans==1:
         print("running hierarchy maker")
-        print("opening pandas.xlsx")
-
        
-
-        wb=xl.load_workbook("pandas.xlsx")
-        ws=wb.active
-        wb.save("pandasBAK.xlsx")
-        ws.delete_rows(1, ws.max_row)
-
-        ws['A1']="Parent"
-        ws['B1']="Node"
-        wb.save("pandas.xlsx")
-        wb.close()
-
-        doc = subprocess.Popen(["start", "/WAIT", "pandas.xlsx"], shell=True)
         system("cls")
         print("waiting for input.........")    
         sleep(2)     
-        que=input("Save the file once you've input the Parent-Node relationships, close it, and then enter anything in this prompt: ")
-        print("input received... running hierarchy maker now.........")
         hiymaker() 
         print("PROCESS COMPLETED!!!")
-        print("REOPENING EXCEL FILE")
-        doc = subprocess.Popen(["start", "/WAIT", "pandas.xlsx"], shell=True)
-        sleep(2) 
+
         system("cls")
 
 
