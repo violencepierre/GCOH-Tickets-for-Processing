@@ -74,7 +74,7 @@ def init(child,parent):
             hitlist = pya.locateOnScreen(r'GCOH Resources\HitList Message.png', grayscale=True, region=region,confidence=.70)
         except Exception as e:
             print('waiting waiting waiting.....')
-
+    print('Found element!!!')
 
     hitlist=pya.center(hitlist)
     x,y=hitlist
@@ -91,6 +91,7 @@ def init(child,parent):
                                             confidence=.70)
         except Exception as e:
             print('waiting waiting waiting.....')
+    print('Found the edit button!!!')
 
     editbutton = pya.center(editbutton)
     x, y = editbutton
@@ -104,7 +105,7 @@ def init(child,parent):
                                             confidence=.70)
         except Exception as e:
             print('waiting waiting waiting.....')
-
+    print('Found the cut button!!!')
     pya.click(cutcommand)
 
     findall=None
@@ -114,7 +115,7 @@ def init(child,parent):
             ##print('find is found in ' + str(pya.center(findall)))
         except Exception as e:
             print('waiting waiting waiting.....')
-
+    print('Found the find all button!!')
     searchterm=None
     while searchterm is None:
         try:
@@ -125,6 +126,7 @@ def init(child,parent):
             search=(x,y) ###searchfield
         except Exception as e:
             print('waiting waiting waiting.....')
+    print('Found element!!!')
 
     pyperclip.copy(parent)
     pyperclip.waitForPaste()
@@ -157,7 +159,7 @@ def init(child,parent):
             hitlist = pya.locateOnScreen(r'GCOH Resources\HitList Message.png', grayscale=True, region=region,confidence=.70)
         except Exception as e:
             print('waiting waiting waiting.....')
-
+    print('Found element in the popup!!!')
 
     hitlist=pya.center(hitlist)
     x,y=hitlist
@@ -174,7 +176,7 @@ def init(child,parent):
                                             confidence=.70)
         except Exception as e:
             print('waiting waiting waiting.....')
-
+    print('found edit button')
     editbutton = pya.center(editbutton)
     x, y = editbutton
 
@@ -186,7 +188,7 @@ def init(child,parent):
             pasteatlowerlevel = pya.locateOnScreen(r'GCOH Resources\pasteatlowerlevel.png', grayscale=True, region=region,confidence=.70)
         except Exception as e:
             print('waiting waiting waiting.....')
-
+    print('found paste button!!! Good job!!!!!!!!!')
     pya.click(pasteatlowerlevel)
     time.sleep(2)
 
