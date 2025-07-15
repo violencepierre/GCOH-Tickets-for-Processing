@@ -29,4 +29,3 @@ def hiymaker():
     #use 0a[Blank] this will solve ur problems
     print("its joeber")
 
-hiymaker()
