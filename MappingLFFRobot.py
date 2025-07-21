@@ -1,4 +1,4 @@
-###PCM window should be in the positive coords####
+### PCM window should be in the positive coords####
 
 
 import os
@@ -14,7 +14,8 @@ global child
 global parent
 global region
 
-def init(child,parent):
+
+def init(child, parent):
     global findall
     global searchfield
     global searchterm
@@ -25,26 +26,28 @@ def init(child,parent):
 
     pyperclip.copy(child)
     pyperclip.waitForPaste()
-    
-    #look for the findall, edit, searchfield, and the find button
-    print('Analyzing screen...')
-    region=(0, 0, 1920, 1080)
 
-    findall=None
+    # look for the findall, edit, searchfield, and the find button
+    print('Analyzing screen...')
+    region = (0, 0, 1920, 1080)
+
+    findall = None
     while findall is None:
         try:
-            findall=pya.locateOnScreen(r'GCOH Resources\FindAllButton.png',grayscale=True,region=region,confidence=.70)
-            ##print('find is found in ' + str(pya.center(findall)))
+            findall = pya.locateOnScreen(
+                r'GCOH Resources\FindAllButton.png', grayscale=True, region=region, confidence=.70)
+            # print('find is found in ' + str(pya.center(findall)))
         except Exception as e:
             print('waiting waiting waiting.....')
-    searchterm=None
+    searchterm = None
     while searchterm is None:
         try:
-            searchterm=pya.locateOnScreen(r'GCOH Resources\SearchTerm.png',grayscale=True,region=region,confidence=.70)
+            searchterm = pya.locateOnScreen(
+                r'GCOH Resources\SearchTerm.png', grayscale=True, region=region, confidence=.70)
 
             x, y = pya.center(searchterm)
-            x,y=x+100,y
-            search=(x,y) ###searchfield
+            x, y = x+100, y
+            search = (x, y)  # searchfield
         except Exception as e:
             print('waiting waiting waiting.....')
 
@@ -53,15 +56,15 @@ def init(child,parent):
     pya.doubleClick(search)
     pya.doubleClick(search)
     pya.doubleClick(search)
-    pya.hotkey("ctrl","a")
-    pya.hotkey("ctrl","a")
+    pya.hotkey("ctrl", "a")
+    pya.hotkey("ctrl", "a")
 
     time.sleep(0.7)
-###pya.doubleClick(search)
-    ##pya.typewrite(child,interval=0.20)
+# pya.doubleClick(search)
+    # pya.typewrite(child,interval=0.20)
     keyboard.send('ctrl+v')
-    
-##asdfasfasdfasdwf
+
+# asdfasfasdfasdwf
 
     time.sleep(0.5)
 
@@ -71,14 +74,15 @@ def init(child,parent):
 
     while hitlist is None:
         try:
-            hitlist = pya.locateOnScreen(r'GCOH Resources\HitList Message.png', grayscale=True, region=region,confidence=.70)
+            hitlist = pya.locateOnScreen(
+                r'GCOH Resources\HitList Message.png', grayscale=True, region=region, confidence=.70)
         except Exception as e:
             print('waiting waiting waiting.....')
     print('Found element!!!')
 
-    hitlist=pya.center(hitlist)
-    x,y=hitlist
-    hitlist=x+10,y+80
+    hitlist = pya.center(hitlist)
+    x, y = hitlist
+    hitlist = x+10, y+80
 
     pya.click(hitlist)
 
@@ -108,22 +112,24 @@ def init(child,parent):
     print('Found the cut button!!!')
     pya.click(cutcommand)
 
-    findall=None
+    findall = None
     while findall is None:
         try:
-            findall=pya.locateOnScreen(r'GCOH Resources\FindAllButton.png',grayscale=True,region=region,confidence=.70)
-            ##print('find is found in ' + str(pya.center(findall)))
+            findall = pya.locateOnScreen(
+                r'GCOH Resources\FindAllButton.png', grayscale=True, region=region, confidence=.70)
+            # print('find is found in ' + str(pya.center(findall)))
         except Exception as e:
             print('waiting waiting waiting.....')
     print('Found the find all button!!')
-    searchterm=None
+    searchterm = None
     while searchterm is None:
         try:
-            searchterm=pya.locateOnScreen(r'GCOH Resources\SearchTerm.png',grayscale=True,region=region,confidence=.70)
+            searchterm = pya.locateOnScreen(
+                r'GCOH Resources\SearchTerm.png', grayscale=True, region=region, confidence=.70)
 
             x, y = pya.center(searchterm)
-            x,y=x+100,y
-            search=(x,y) ###searchfield
+            x, y = x+100, y
+            search = (x, y)  # searchfield
         except Exception as e:
             print('waiting waiting waiting.....')
     print('Found element!!!')
@@ -139,31 +145,27 @@ def init(child,parent):
     time.sleep(0.7)
     pya.press('delete')
     pya.press('delete')
-    pya.hotkey("ctrl","a")
-    pya.hotkey("ctrl","a")
+    pya.hotkey("ctrl", "a")
+    pya.hotkey("ctrl", "a")
     time.sleep(0.7)
-    ###pya.typewrite(parent,interval=0.20)
+    # pya.typewrite(parent,interval=0.20)
     keyboard.send('ctrl+v')
     time.sleep(0.7)
     pya.click(findall)
-
-
-
-
-
 
     hitlist = None
 
     while hitlist is None:
         try:
-            hitlist = pya.locateOnScreen(r'GCOH Resources\HitList Message.png', grayscale=True, region=region,confidence=.70)
+            hitlist = pya.locateOnScreen(
+                r'GCOH Resources\HitList Message.png', grayscale=True, region=region, confidence=.70)
         except Exception as e:
             print('waiting waiting waiting.....')
     print('Found element in the popup!!!')
 
-    hitlist=pya.center(hitlist)
-    x,y=hitlist
-    hitlist=x+10,y+80
+    hitlist = pya.center(hitlist)
+    x, y = hitlist
+    hitlist = x+10, y+80
 
     pya.click(hitlist)
 
@@ -185,36 +187,36 @@ def init(child,parent):
     pasteatlowerlevel = None
     while pasteatlowerlevel is None:
         try:
-            pasteatlowerlevel = pya.locateOnScreen(r'GCOH Resources\pasteatlowerlevel.png', grayscale=True, region=region,confidence=.70)
+            pasteatlowerlevel = pya.locateOnScreen(
+                r'GCOH Resources\pasteatlowerlevel.png', grayscale=True, region=region, confidence=.70)
         except Exception as e:
             print('waiting waiting waiting.....')
     print('found paste button!!! Good job!!!!!!!!!')
     pya.click(pasteatlowerlevel)
     time.sleep(2)
 
+
 def mainloop():
 
-    wb=xl.load_workbook(filename=r'GCOH Resources/GCOHPost.xlsx')
-    ws=wb["MDGF"]
-    lrow=len(ws['A'])
-    i=2
+    wb = xl.load_workbook(filename=r'GCOH Resources/GCOHPost.xlsx')
+    ws = wb["MDGF"]
+    lrow = len(ws['A'])
+    i = 2
 
     while i < lrow+1:
 
-
-        child=ws['A' + str(i)].value
-        parent=ws['B' + str(i)].value
+        child = ws['A' + str(i)].value
+        parent = ws['B' + str(i)].value
         os.system("cls")
         print('Working on row:' + str(i))
         print(child + " goes to " + parent)
-        i=i+1
-        print('Currently remaining objects: ' + str(lrow - 1 - (i-2)) + ' (aside from currently being processed)') 
-        
+        i = i+1
+        print('Currently remaining objects: ' + str(lrow - 1 - (i-2)) +
+              ' (aside from currently being processed)')
 
-        init(child,parent)
+        init(child, parent)
 
     print("Task completed successfully")
 
 
-
-##dream()
+# dream()
