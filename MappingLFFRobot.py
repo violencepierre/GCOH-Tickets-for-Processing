@@ -1,11 +1,9 @@
 ### PCM window should be in the positive coords####
 
-
+import time
 import os
 import pyautogui as pya
 import openpyxl as xl
-import time
-import threading
 import pyperclip
 import keyboard
 
@@ -25,7 +23,6 @@ def init(child, parent):
     global paste
 
     pyperclip.copy(child)
-    pyperclip.waitForPaste()
 
     # look for the findall, edit, searchfield, and the find button
     print('Analyzing screen...')
@@ -135,7 +132,6 @@ def init(child, parent):
     print('Found element!!!')
 
     pyperclip.copy(parent)
-    pyperclip.waitForPaste()
 
     pya.moveTo(search)
     time.sleep(0.7)
