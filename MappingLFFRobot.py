@@ -21,6 +21,9 @@ def init(child, parent):
     global edit
     global cut
     global paste
+    global errorhand
+
+    errorhand=0
 
     pyperclip.copy(child)
 
@@ -35,7 +38,7 @@ def init(child, parent):
                 r'GCOH Resources\FindAllButton.png', grayscale=True, region=region, confidence=.70)
             # print('find is found in ' + str(pya.center(findall)))
         except Exception as e:
-            print('waiting waiting waiting.....')
+            pass
     searchterm = None
     while searchterm is None:
         try:
@@ -46,7 +49,8 @@ def init(child, parent):
             x, y = x+100, y
             search = (x, y)  # searchfield
         except Exception as e:
-            print('waiting waiting waiting.....')
+            pass
+
 
     pya.moveTo(search)
     time.sleep(.7)
@@ -74,7 +78,7 @@ def init(child, parent):
             hitlist = pya.locateOnScreen(
                 r'GCOH Resources\HitList Message.png', grayscale=True, region=region, confidence=.70)
         except Exception as e:
-            print('waiting waiting waiting.....')
+            pass
     print('Found element!!!')
 
     hitlist = pya.center(hitlist)
@@ -91,7 +95,7 @@ def init(child, parent):
             editbutton = pya.locateOnScreen(r'GCOH Resources\editbutton.png', grayscale=True, region=region,
                                             confidence=.70)
         except Exception as e:
-            print('waiting waiting waiting.....')
+            pass
     print('Found the edit button!!!')
 
     editbutton = pya.center(editbutton)
@@ -105,7 +109,7 @@ def init(child, parent):
             cutcommand = pya.locateOnScreen(r'GCOH Resources\cutcommand.png', grayscale=True, region=region,
                                             confidence=.70)
         except Exception as e:
-            print('waiting waiting waiting.....')
+            pass
     print('Found the cut button!!!')
     pya.click(cutcommand)
 
@@ -116,7 +120,7 @@ def init(child, parent):
                 r'GCOH Resources\FindAllButton.png', grayscale=True, region=region, confidence=.70)
             # print('find is found in ' + str(pya.center(findall)))
         except Exception as e:
-            print('waiting waiting waiting.....')
+            pass
     print('Found the find all button!!')
     searchterm = None
     while searchterm is None:
@@ -128,7 +132,7 @@ def init(child, parent):
             x, y = x+100, y
             search = (x, y)  # searchfield
         except Exception as e:
-            print('waiting waiting waiting.....')
+            pass
     print('Found element!!!')
 
     pyperclip.copy(parent)
@@ -156,7 +160,7 @@ def init(child, parent):
             hitlist = pya.locateOnScreen(
                 r'GCOH Resources\HitList Message.png', grayscale=True, region=region, confidence=.70)
         except Exception as e:
-            print('waiting waiting waiting.....')
+            pass
     print('Found element in the popup!!!')
 
     hitlist = pya.center(hitlist)
@@ -173,7 +177,7 @@ def init(child, parent):
             editbutton = pya.locateOnScreen(r'GCOH Resources\editbutton.png', grayscale=True, region=region,
                                             confidence=.70)
         except Exception as e:
-            print('waiting waiting waiting.....')
+            pass
     print('found edit button')
     editbutton = pya.center(editbutton)
     x, y = editbutton
@@ -186,7 +190,7 @@ def init(child, parent):
             pasteatlowerlevel = pya.locateOnScreen(
                 r'GCOH Resources\pasteatlowerlevel.png', grayscale=True, region=region, confidence=.70)
         except Exception as e:
-            print('waiting waiting waiting.....')
+            pass
     print('found paste button!!! Good job!!!!!!!!!')
     pya.click(pasteatlowerlevel)
     time.sleep(2)
