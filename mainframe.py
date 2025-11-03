@@ -4,6 +4,7 @@ from MappingLFFRobot import mainloop
 from test import testing
 import openpyxl as xl
 import subprocess
+import os
 
 
 def get_user_choice():
@@ -20,34 +21,44 @@ def get_user_choice():
 
 def run_hierarchy_maker():
     try:
+        os.system('cls')
         print("running hierarchy maker")
         HierarchyMaker.hiymaker()
+        print("Hierarchy Maker run successfully!")
     except Exception as e:
         print(f"Error running hierarchy maker: {e}")
 
 
 def run_nonlff_template_creator():
     try:
+        os.system('cls')
         print("running nonLFF template creator")
         mappingnonlffaktion()
+        print("NonLFF template maker run successfully!")
     except Exception as e:
         print(f"Error creating nonLFF template: {e}")
 
 
 def run_lff_robot():
     try:
+        os.system('cls')
         print("running LFF r0bot")
         mainloop()
+        print("LFF robot run successfully!!!")
     except Exception as e:
         print(f"Error running LFF robot: {e}")
 
 
 def run_git_commands(choice):
     if choice == 5:
+        os.system('cls')
         subprocess.run(["git", "pull"])
+        print("GIT pulled please check if there are any erros")
     elif choice == 6:
+        os.system('cls')
         subprocess.run(["git", "commit", "-a", "-m", "asdfasdfas"])
         subprocess.run(["git", "push"])
+        print("GIT pushed please check if there are any erros")
 
 
 def main():
@@ -55,6 +66,7 @@ def main():
     while True:
         x = get_user_choice()
         if x == 4:
+            os.system('cls')
             print("thank u for using my pr0gram now fck off dummy")
             break
         elif x == 1:
