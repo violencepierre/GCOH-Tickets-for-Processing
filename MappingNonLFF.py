@@ -3,6 +3,7 @@ import warnings
 import numpy as np
 import pandas as pd
 import openpyxl as xl
+
 warnings.simplefilter(action='ignore', category=FutureWarning)
 
 
@@ -12,7 +13,7 @@ def mappingnonlffaktion():
 
     df = pd.read_excel('Inputs/PCB pull.xlsx', sheet_name='PCB pull')
     out = pd.DataFrame(columns=['Characteristic Name[CHANM]', 'Characteristic Value[CHAVL]', 'Target Hierarchy Name[TGT_HRY_HIENM]',
-                       'Target Hierarchy Node Name[TGT_HRY_NODENAME]', 'Target Hierarchy Node Object Name[TGT_HRY_NODEOBJNM]', 'Mappable'])
+                       'Target Hierarchy Node Name[TGT_HRY_NODENAME]', 'Target Hierarchy Node Object Name[TGT_HRY_NODEOBJNM]', 'Requestor Comment[REQUESTOR_CMT]'])
     unmappable = pd.DataFrame(columns=['Obj', 'Target'])
 
     wb = xl.load_workbook('Inputs/PyDump.xlsx')
@@ -59,8 +60,11 @@ def mappingnonlffaktion():
         else:
             mapp = 'Yes'
 
-        out = out._append({'Characteristic Name[CHANM]': objecttype, 'Characteristic Value[CHAVL]': formapping, 'Target Hierarchy Name[TGT_HRY_HIENM]': 'GCOH',
-                          'Target Hierarchy Node Name[TGT_HRY_NODENAME]': targetnode, 'Target Hierarchy Node Object Name[TGT_HRY_NODEOBJNM]': '0HIER_NODE', 'Mappable': mapp}, ignore_index=True)
+        out = out._append({'Characteristic Name[CHANM]': objecttype, 'Characteristic Value[CHAVL]': formapping,
+                           'Target Hierarchy Name[TGT_HRY_HIENM]': 'GCOH',
+                           'Target Hierarchy Node Name[TGT_HRY_NODENAME]': targetnode,
+                           'Target Hierarchy Node Object Name[TGT_HRY_NODEOBJNM]': '0HIER_NODE',
+                           'Requestor Comment[REQUESTOR_CMT]': ws.cell(row=i, column=3).value}, ignore_index=True)
 
         i += 1
 
