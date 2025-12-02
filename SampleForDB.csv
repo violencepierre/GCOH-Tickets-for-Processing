@@ -1,0 +1,15 @@
+﻿Ticket,IsOpen,Status,Object,Requested,CurrentParent,Type,LFFID,Sector,AnalysisComments,Check,Forecast,DateOpened,Delayed,DaysAgeing,Author
+FR7897475,open,Currently Truncated/Waiting Actuals,ITEMPEU_001700006137,H000004596,,Non-LFF,,HC,,FALSE,f0,10/24/2025,yep,19,Anna Glab
+FR7897475,open,Currently Truncated/Waiting Actuals,ITEMPEU_001700006138,H000004597,,Non-LFF,,HC,,FALSE,f0,10/24/2025,yep,19,Anna Glab
+FR7930721,open,MAPPED,CITR_1000$$$1022APPL,G000000256,,Non-LFF,,MGF,,TRUE,f0,11/4/2025,yep,12,Jay-R Lizardo
+FR7930721,open,Currently Truncated/Waiting Actuals,CLFF_1000$$$DE65GIT032,G000000256,,LFF (MDG-F),,MGF,,FALSE,f0,11/4/2025,yep,12,Jay-R Lizardo
+FR7930721,open,MAPPED,CLFF_1000$$$DE10GIT101,G000001446,,LFF (MDG-F),,MGF,,TRUE,f0,11/4/2025,yep,12,Jay-R Lizardo
+FR7930721,open,MAPPED,CLFF_1000$$$DE10YIT014,G000001444,,LFF (MDG-F),,MGF,,TRUE,f0,11/4/2025,yep,12,Jay-R Lizardo
+FR7943141,open,Waiting for Tm1 Replication,CSCALA_1022$ITR,G000001238,,Non-LFF,,MGF,,FALSE,f0,11/7/2025,yep,9,Jay-R Lizardo
+FR7983976,open,Waiting for Tm1 Replication,CORAERP_MMOR1945.9032,G000001176,,Non-LFF,,MGF,,FALSE,f0,11/20/2025,on track,0,Jojeff Tagnong
+FR7983976,open,Waiting for Tm1 Replication,CTEMPEU_1000PL80GFO011,G000001263,,Non-LFF,,MGF,,FALSE,f0,11/20/2025,on track,0,Jojeff Tagnong
+FR7983976,open,Waiting for Tm1 Replication,CTEMPEU_1000PL80GFO013,G000001176,,Non-LFF,,MGF,,FALSE,f0,11/20/2025,on track,0,Jojeff Tagnong
+FR7983976,open,Waiting for Tm1 Replication,CTEMPEU_1000PL80GFO015,G000001176,,Non-LFF,,MGF,,FALSE,f0,11/20/2025,on track,0,Jojeff Tagnong
+FR7983976,open,Waiting for Tm1 Replication,CORAERP_MMOR1945.9115,G000001263,,Non-LFF,,MGF,,FALSE,f0,11/20/2025,on track,0,Jojeff Tagnong
+FR7983976,open,Waiting for MDGF approval,CLFF_1000$$$DE10G69660,G000001263,,LFF (MDG-F),,MGF,,FALSE,f0,11/20/2025,on track,0,Jojeff Tagnong
+FR7983976,open,Waiting for Tm1 Replication,CTEMPEU_1000PL80GFO018,G000001176,,Non-LFF,,MGF,,FALSE,f0,11/20/2025,on track,0,Jojeff Tagnong
