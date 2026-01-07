@@ -3,6 +3,7 @@ import warnings
 import numpy as np
 import pandas as pd
 import openpyxl as xl
+import datetime as dt
 
 warnings.simplefilter(action='ignore', category=FutureWarning)
 
@@ -60,11 +61,19 @@ def mappingnonlffaktion():
         else:
             mapp = 'Yes'
 
-        out = out._append({'Characteristic Name[CHANM]': objecttype, 'Characteristic Value[CHAVL]': formapping,
-                           'Target Hierarchy Name[TGT_HRY_HIENM]': 'GCOH',
-                           'Target Hierarchy Node Name[TGT_HRY_NODENAME]': targetnode,
-                           'Target Hierarchy Node Object Name[TGT_HRY_NODEOBJNM]': '0HIER_NODE',
-                           'Requestor Comment[REQUESTOR_CMT]': ws.cell(row=i, column=3).value}, ignore_index=True)
+        out = out._append({
+            'Characteristic Name[CHANM]': objecttype,
+            'Characteristic Value[CHAVL]': formapping,
+            'Target Hierarchy Name[TGT_HRY_HIENM]': 'GCOH',
+            'Target Hierarchy Node Name[TGT_HRY_NODENAME]': targetnode,
+            'Target Hierarchy Node Object Name[TGT_HRY_NODEOBJNM]': '0HIER_NODE',
+            'Requestor Comment[REQUESTOR_CMT]': ws.cell(row=i, column=3).value,
+            'Date in Format YYYY-MM-DD[VALID_FROM]': dt.datetime.now().strftime('%Y-%m-%d')
+        }, ignore_index=True)
+
+        # replace hyphens with blanks
+        out['Date in Format YYYY-MM-DD[VALID_FROM]'] = out['Date in Format YYYY-MM-DD[VALID_FROM]'].str.replace(
+            '-', '')
 
         i += 1
 
