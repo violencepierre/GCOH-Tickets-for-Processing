@@ -10,5 +10,13 @@ def fake_bday_day(year):
     return ((year * 7) % 31) + 1
 
 
-print(seq(6))
-print(fake_bday_day(2027))
+x = 1
+y = 2023
+while x < 20:
+    d = str(fake_bday_day(y))
+    print(str(seq(x)) + "/" + d + "/" + str(y))
+
+    y = y+1
+    x = x+1
+
+# print(fake_bday_day(2028))
