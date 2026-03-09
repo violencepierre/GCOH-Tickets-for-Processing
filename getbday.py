@@ -19,4 +19,4 @@ while x < 20:
     y = y+1
     x = x+1
 
-# print(fake_bday_day(2028))
+print(fake_bday_day(2028))
